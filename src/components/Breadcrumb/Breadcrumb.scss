@@ -1,0 +1,28 @@
+@use "../../theme/colors.scss" as colors;
+
+.breadcrumb {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width:100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .breadcrumb-item {
+    color: colors.$placeholder-color;
+    font-size: 14px;
+    list-style: none;
+    font-family: sans-serif;
+    margin-left: 0.3rem;
+    &:last-child {
+      color: colors.$highlighted-text-color;
+      font-weight: bold;
+    }    
+    &::before{
+        content: ' » ';
+    }
+    &:first-child::before{
+        display: none;
+    }
+  }
+}

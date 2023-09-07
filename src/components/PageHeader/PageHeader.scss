@@ -1,0 +1,18 @@
+@use "../../theme/colors.scss" as colors;
+
+.page-header-nav {
+  width: 100%;
+  padding: 0.6rem 4rem;
+  background: colors.$bg-page-header;
+  display: grid;
+  grid-template-columns: repeat(12, auto);
+  gap: 1rem;
+  align-items: center;
+
+  .search-bar {
+    grid-column: 3/11;
+  }
+  .ml-logo {
+    grid-column: 2/2;    
+  }
+}

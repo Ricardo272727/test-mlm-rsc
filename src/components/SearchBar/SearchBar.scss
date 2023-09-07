@@ -1,0 +1,53 @@
+@use "../../theme/colors.scss" as colors;
+
+.search-bar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+
+  $border-radius-size: 0.25rem;
+  .search-bar-input {
+    width: 100%;
+    font-size: 18px;
+    padding: 0.7rem 1rem;    
+    background: white;
+    color: colors.$text-color;
+    border: none;
+    outline: none;
+    border-top-left-radius: $border-radius-size;
+    border-bottom-left-radius: $border-radius-size;
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: colors.$placeholder-color;
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: colors.$placeholder-color;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: colors.$placeholder-color;
+    }
+  }
+  .search-button {
+    border: none;
+    cursor: pointer;
+    width: 2.8rem;
+    height: 100%;
+    padding: 0.65rem;
+    border-top-right-radius: $border-radius-size;
+    border-bottom-right-radius: $border-radius-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-icon {
+    max-width: 100%;
+    height: auto;
+  }
+}

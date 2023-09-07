@@ -1,0 +1,15 @@
+@use '../../theme/colors.scss' as colors;
+
+.page-content{
+    background: colors.$bg-page-body;
+    width:100%;
+    min-height: 100vh;    
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    gap: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    .breadcrumb{
+        grid-column: 2/10;        
+    }
+}
