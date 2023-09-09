@@ -4,12 +4,13 @@
     background: colors.$bg-page-body;
     width:100%;
     min-height: 100vh;    
-    display: grid;
-    grid-template-columns: repeat(12, auto);
-    gap: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
     padding-left: 4rem;
     padding-right: 4rem;
     .breadcrumb{
-        grid-column: 2/10;        
     }
 }

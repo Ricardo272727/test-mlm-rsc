@@ -8,7 +8,7 @@ export const ResponsiveImage = ({
 }) => {
   const src = window.innerWidth <= 1200 ? mobileImage : desktopImage;
 
-  return <img src={src} alt={alt} className={className} />;
+  return <img src={src} alt={alt} className={className} title={alt} />;
 };
 
 ResponsiveImage.propTypes = {

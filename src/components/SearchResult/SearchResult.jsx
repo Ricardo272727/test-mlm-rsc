@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import { FreeShippingIcon } from "../FreeShippingIcon/FreeShippingIcon";
+import "./SearchResult.scss";
 
 export const SearchResult = ({
   title = "",
   price = "",
   picture = "",
-  freeShipping = false,  
+  freeShipping = false,
   authorLastName = "",
   href = "",
 }) => (
@@ -16,16 +17,15 @@ export const SearchResult = ({
       </figure>
       <header className="product-header">
         <section className="price-section">
-          <h3>{`$${price}`}</h3>
+          <h3>{`$ ${price}`}</h3>
           {freeShipping && <FreeShippingIcon title={title} />}
         </section>
-        <section className="author-section">
-          <p>{authorLastName}</p>
+        <section className="product-name">
+          <h4>{title}</h4>
         </section>
       </header>
-
-      <section className="product-name">
-        <h4>{title}</h4>
+      <section className="author-section">
+        <p>{authorLastName}</p>
       </section>
     </article>
   </a>

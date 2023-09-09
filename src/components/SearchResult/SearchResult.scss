@@ -1,0 +1,79 @@
+@use "../../theme/colors.scss" as colors;
+
+.search-result-link {
+  width: 80%;
+  padding: 14px;
+  display: block;
+  background-color: white;
+  &:visited,
+  &:hover,
+  &:active,
+  &:link {
+    color: inherit;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: normal;
+  }
+}
+
+.search-result-article {
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-bottom: 2px solid colors.$bg-page-body;
+
+  .search-result-link:last-child &{
+    border-bottom: none;
+  }
+
+  figure {
+    img {
+      width: 180px;
+      height: 180px;
+      border-radius: 4px;
+    }
+  }
+
+  .product-header {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 16px;
+    .price-section {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 16px;
+      margin-bottom: 32px;
+      h3 {
+        margin-right: 1rem;
+        font-size: 24px;
+        font-weight: normal;
+      }
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+    .product-name{
+        h4{
+            font-size: 18px;
+            font-weight: normal;
+        }
+    }
+  }
+  .author-section {
+    width: 20%;
+    margin-top: 32px;
+    text-align: left;
+    margin-left: auto;
+    p{
+        font-size: 12px;
+        color: colors.$highlighted-text-color;
+    }
+  }
+}

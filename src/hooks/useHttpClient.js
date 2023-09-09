@@ -14,7 +14,7 @@ export const useHttpClient = ({ baseURL = "" }) => {
   );
 
   const request = useCallback(
-    ({ method = "", endpoint = "", body = {}, params = {} }) => {
+    async ({ method = "", endpoint = "", body = {}, params = {} }) => {
       try {
         const requestConfig = {
           method,
@@ -22,11 +22,15 @@ export const useHttpClient = ({ baseURL = "" }) => {
           params,
           data: body,
         };
-        const response = httpInstance.request(requestConfig);
-        console.log({ response });
-        return { response: response.data, status: response.status };
+        const response = await httpInstance.request(requestConfig);
+        const success = response.status === 200;
+        return { response: response.data, status: response.status, success };
       } catch (error) {
-        return { response: error.response.data, status: error.response.status };
+        return {
+          response: error.response.data,
+          status: error.response.status,
+          success: false,
+        };
       }
     },
     [httpInstance]

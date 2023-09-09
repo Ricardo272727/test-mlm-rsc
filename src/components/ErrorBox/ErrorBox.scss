@@ -1,0 +1,17 @@
+.error-box {
+  width: 100%;
+  height: fit-content;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: white;
+  margin: 4rem auto;
+  grid-column: 5/9;
+
+  h3 {
+    font-size: 1.5rem;
+    color: black;    
+    font-family: sans-serif;
+  }
+}
