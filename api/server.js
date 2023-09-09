@@ -1,10 +1,13 @@
 import express from "express";
 import _ from "lodash";
+import cors from 'cors'
 
 const app = express();
+app.use(cors())
 const port = 5400;
 
 const findCategories = (result) => {
+  //console.log(result['filters'])
   const filter = _.get(result, "filters").find(
     (filter) => filter.id === "category"
   );
@@ -76,7 +79,7 @@ app.get("/api/items/:id", async (req, res) => {
   const id = req.params.id;
   const item = await fetchItem(id);
   const itemDescription = await fetchItemDescription(id);
-
+  console.log({itemDescription})
   return res.send({
     author: {},
     item: {
@@ -91,7 +94,7 @@ app.get("/api/items/:id", async (req, res) => {
         condition: _.get(item, 'condition'),
         free_shipping: _.get(item, 'shipping.free_shipping'),
         sold_quantity: _.get(item, 'sold_quantity'),
-        description: _.get(itemDescription, 'text')
+        description: _.get(itemDescription, 'plain_text')
     },
   });
 });
