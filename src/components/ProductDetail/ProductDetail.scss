@@ -1,0 +1,81 @@
+@use '../../theme/colors.scss' as colors;
+
+.product-detail-article{
+    width: 70%;
+    margin: 1rem auto;
+    background-color: white;
+    font-family: sans-serif;
+    border-radius: 4px;    
+
+    .product-presentation{
+        width: 100%;        
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .product-picture{
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 680px;
+                height: auto;
+                margin: 0 auto;
+            }            
+        }
+        .product-information{
+            width: 30%;
+            padding-top: 32px;
+            padding-left: 32px;
+            padding-right: 32px;
+
+            .product-condition {                
+                font-size: 14px;
+                text-align: left;                       
+                font-weight: normal;
+                margin-bottom: 14px;
+            }
+            .product-title{
+                font-size: 24px;
+                font-weight: bold;
+
+            }
+            .product-price{
+                padding-top: 32px;
+                padding-bottom: 32px;
+                font-size: 46px;
+                font-weight: normal;
+            }
+            .buy-button{
+                width: 100%;
+                background: #3483FA;
+                border-radius: 4px;
+                color: white;
+                text-align: center;
+                padding: 0.7rem 0;
+                cursor: pointer;
+                font-size: 1.1rem;
+                outline: none;
+                border: none;
+
+            }            
+        }
+    }    
+    .product-description{
+        width: 70%;
+        padding: 32px;
+        margin-top: 5rem;
+        h3{
+            padding-bottom: 32px;
+            font-size: 28px;
+            font-weight: normal;
+        }
+        p{
+            font-size: 16px;
+            text-align: left;
+            color: colors.$placeholder-color;
+        }
+    }
+}
