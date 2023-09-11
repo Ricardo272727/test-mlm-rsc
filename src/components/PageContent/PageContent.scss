@@ -1,16 +1,15 @@
 @use '../../theme/colors.scss' as colors;
+@use '../../theme/containers.scss' as containers;
 
 .page-content{
     background: colors.$bg-page-body;
-    width:100%;
+    width: 100%;
     min-height: 100vh;    
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 
-    padding-left: 4rem;
-    padding-right: 4rem;
-    .breadcrumb{
-    }
+    padding-left: containers.$column-width;
+    padding-right: containers.$column-width;
 }

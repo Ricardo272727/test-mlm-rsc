@@ -5,7 +5,7 @@ import { useSearchBar } from "../hooks/useSearchBar";
 import { useSearchResult } from "../hooks/useSearchResult";
 import { SearchPage } from "../layouts/SearchPage";
 
-export const SearchResultPage = () => {
+const SearchResultPage = () => {
   const { value, onChange, onSubmit } = useSearchBar({ name: "search" });
 
   const { search, categories, results, error } = useSearchResult({
@@ -41,3 +41,5 @@ export const SearchResultPage = () => {
     </SearchPage>
   );
 };
+
+export default SearchResultPage

@@ -79,7 +79,7 @@ app.get("/api/items/:id", async (req, res) => {
   const id = req.params.id;
   const item = await fetchItem(id);
   const itemDescription = await fetchItemDescription(id);
-  console.log({itemDescription})
+
   return res.send({
     author: {},
     item: {

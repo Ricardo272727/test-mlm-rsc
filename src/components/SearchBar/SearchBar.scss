@@ -1,4 +1,5 @@
 @use "../../theme/colors.scss" as colors;
+@use '../../theme/fonts.scss' as fonts;
 
 .search-bar {
   display: flex;
@@ -18,6 +19,7 @@
     outline: none;
     border-top-left-radius: $border-radius-size;
     border-bottom-left-radius: $border-radius-size;
+    font-family: fonts.$font-family;
     &::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
       color: colors.$placeholder-color;

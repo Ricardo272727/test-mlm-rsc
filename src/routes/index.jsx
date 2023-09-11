@@ -1,13 +1,19 @@
+import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { SearchBoxPage } from "../pages/SearchBoxPage";
-import { SearchResultPage } from "../pages/SearchResultPage";
-import { ProductDetailPage } from "../pages/ProductDetailPage";
+const SearchBoxPage = lazy(() => import("../pages/SearchBoxPage"));
+const SearchResultPage = lazy(() => import("../pages/SearchResultPage"));
+const ProductDetailPage = lazy(() => import("../pages/ProductDetailPage"));
 
+const createLazyElement = (Element) => (
+  <Suspense fallback={<>Cargando...</>}>
+    <Element />
+  </Suspense>
+);
 
 export const routes = [
-    {path: '/',  element: <SearchBoxPage/> },
-    {path: '/items',  element: <SearchResultPage/> },
-    {path: '/items/:id',  element: <ProductDetailPage /> },
-]
+  { path: "/", element: createLazyElement(SearchBoxPage) },
+  { path: "/items", element: createLazyElement(SearchResultPage) },
+  { path: "/items/:id", element: createLazyElement(ProductDetailPage) },
+];
 
-export const router = createBrowserRouter(routes)
+export const router = createBrowserRouter(routes);

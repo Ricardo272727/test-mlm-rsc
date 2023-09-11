@@ -1,6 +1,9 @@
 @use "../../theme/colors.scss" as colors;
+@use '../../theme/containers.scss' as containers;
 
 .breadcrumb {
+  padding-left: containers.$column-width;
+  padding-right: containers.$column-width;
   margin-top: 16px;
   margin-bottom: 16px;
   width:100%;

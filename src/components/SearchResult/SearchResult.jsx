@@ -10,22 +10,36 @@ export const SearchResult = ({
   authorLastName = "",
   href = "",
 }) => (
-  <a href={href} className="search-result-link">
-    <article className="search-result-article">
-      <figure>
-        <img src={picture} alt={title} className="picture" />
+  <a href={href} className="search-result-link" title={title} tabIndex={0}>
+    <article
+      className="search-result-article"
+      itemScope
+      itemType="https://schema.org/Product"
+    >
+      <figure name="Imagen del producto">
+        <img
+          src={picture}
+          alt={title}
+          className="picture"
+          title={title}
+          itemProp="image"
+        />
       </figure>
       <header className="product-header">
         <section className="price-section">
-          <h3>{`$ ${price}`}</h3>
+          <h3 name="Precio">{`$ ${price}`}</h3>
           {freeShipping && <FreeShippingIcon title={title} />}
         </section>
         <section className="product-name">
-          <h4>{title}</h4>
+          <h4 name="Producto" itemProp="name">
+            {title}
+          </h4>
         </section>
       </header>
       <section className="author-section">
-        <p>{authorLastName}</p>
+        <p name="Vendedor" title={authorLastName}>
+          {authorLastName}
+        </p>
       </section>
     </article>
   </a>

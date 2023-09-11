@@ -1,7 +1,8 @@
 import { Logo } from "../Logo/Logo";
 import { SearchBar } from "../SearchBar/SearchBar";
 import PropTypes from "prop-types";
-import './PageHeader.scss'
+import "./PageHeader.scss";
+import { Link } from "react-router-dom";
 
 export const PageHeader = ({
   searchValue = "",
@@ -10,7 +11,9 @@ export const PageHeader = ({
 }) => {
   return (
     <nav className="page-header-nav">
-      <Logo />
+      <Link to="/" className="logo-link">
+        <Logo />
+      </Link>
       <SearchBar
         value={searchValue}
         onChange={onChangeSearch}

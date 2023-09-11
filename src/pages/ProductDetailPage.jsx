@@ -5,7 +5,7 @@ import { SearchPage } from "../layouts/SearchPage";
 import { useProductDetail } from "../hooks/useProductDetail";
 import { ProductDetail } from "../components/ProductDetail/ProductDetail";
 
-export const ProductDetailPage = () => {
+const ProductDetailPage = () => {
   const params = useParams();
   const { value, onChange, onSubmit } = useSearchBar({ name: "search" });
   const { categories, product } = useProductDetail({ id: params.id });
@@ -32,3 +32,5 @@ export const ProductDetailPage = () => {
     </SearchPage>
   );
 };
+
+export default ProductDetailPage;

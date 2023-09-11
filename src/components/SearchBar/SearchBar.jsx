@@ -12,15 +12,16 @@ export const SearchBar = ({
   onSubmit = () => console.log("Not implemented onSubmit"),
 }) => {
   return (
-    <form className="search-bar" onSubmit={onSubmit}>
+    <form className="search-bar" onSubmit={onSubmit} title="Busca un producto">
       <input
         placeholder={placeholder}
         className="search-bar-input"
         name={name}
         value={value}
         onChange={onChange}
+        title="Barra de búsqueda"
       />
-      <button className="search-button" type="submit">
+      <button className="search-button" type="submit" title="Buscar">
         <ResponsiveImage
           mobileImage={SearchIcon}
           desktopImage={SearchIcon2x}

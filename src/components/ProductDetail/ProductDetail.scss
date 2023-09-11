@@ -1,10 +1,12 @@
 @use '../../theme/colors.scss' as colors;
+@use '../../theme/containers.scss' as containers;
+@use '../../theme/fonts.scss' as fonts;
 
 .product-detail-article{
-    width: 70%;
+    width: calc(10*containers.$column-width);
     margin: 1rem auto;
     background-color: white;
-    font-family: sans-serif;
+    font-family: fonts.$font-family;    
     border-radius: 4px;    
 
     .product-presentation{
@@ -39,8 +41,7 @@
             }
             .product-title{
                 font-size: 24px;
-                font-weight: bold;
-
+                font-weight: bold;                
             }
             .product-price{
                 padding-top: 32px;

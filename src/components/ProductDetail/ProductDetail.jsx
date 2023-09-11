@@ -19,16 +19,21 @@ export const ProductDetail = ({
 }) => {
   const translateCondition = (condition) => spanishConditions[condition];
   return (
-    <article className="product-detail-article">
+    <article
+      className="product-detail-article"
+      title={title}
+      itemScope
+      itemType="https://schema.org/Product"
+    >
       <section className="product-presentation">
         <figure className="product-picture">
-          <img src={picture} alt={title} title={title} />
+          <img src={picture} alt={title} title={title} itemProp="image"/>
         </figure>
         <section className="product-information">
-          <p className="product-condition">{`${translateCondition(
+          <p className="product-condition" itemProp="itemCondition">{`${translateCondition(
             condition
           )} - ${soldQuantity} vendidos`}</p>
-          <h3 className="product-title" title={title}>
+          <h3 className="product-title" title={title} itemProp="name">
             {title}
           </h3>
           <h2 className="product-price">{`$ ${price}`}</h2>
@@ -39,7 +44,7 @@ export const ProductDetail = ({
       </section>
       <section className="product-description">
         <h3>Descripción del producto</h3>
-        <p>{description}</p>
+        <p itemProp="description">{description}</p>
       </section>
     </article>
   );

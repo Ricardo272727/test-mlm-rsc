@@ -1,18 +1,21 @@
 @use "../../theme/colors.scss" as colors;
 
+
+$column-width: 8.33%;
+
 .page-header-nav {
   width: 100%;
-  padding: 0.6rem 4rem;
+  padding: 0.6rem $column-width;
   background: colors.$bg-page-header;
-  display: grid;
-  grid-template-columns: repeat(12, auto);
-  gap: 1rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
 
   .search-bar {
-    grid-column: 3/11;
+   width: calc($column-width*9);
   }
-  .ml-logo {
-    grid-column: 2/2;    
+
+  .logo-link {
+    width: $column-width;
   }
 }

@@ -5,7 +5,7 @@ import { ResponsiveImage } from "../ResponsiveImage/ResponsiveImage";
 
 export const FreeShippingIcon = ({ title = "" }) => {
   return (
-    <ResponsiveImage
+    <ResponsiveImage    
       alt={`Envío gratis ${title}`}
       mobileImage={Shipping}
       desktopImage={Shipping2x}
