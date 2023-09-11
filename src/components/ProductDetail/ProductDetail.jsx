@@ -27,17 +27,22 @@ export const ProductDetail = ({
     >
       <section className="product-presentation">
         <figure className="product-picture">
-          <img src={picture} alt={title} title={title} itemProp="image"/>
+          <img src={picture} alt={title} title={title} itemProp="image" />
         </figure>
         <section className="product-information">
-          <p className="product-condition" itemProp="itemCondition">{`${translateCondition(
-            condition
-          )} - ${soldQuantity} vendidos`}</p>
+          <p
+            className="product-condition"
+            itemProp="itemCondition"
+          >{`${translateCondition(condition)} - ${soldQuantity} vendidos`}</p>
           <h3 className="product-title" title={title} itemProp="name">
             {title}
           </h3>
           <h2 className="product-price">{`$ ${price}`}</h2>
-          <button className="buy-button" onClick={() => onClickBuy(id)}>
+          <button
+            className="buy-button"
+            title="Comprar"
+            onClick={() => onClickBuy(id)}
+          >
             Comprar
           </button>
         </section>

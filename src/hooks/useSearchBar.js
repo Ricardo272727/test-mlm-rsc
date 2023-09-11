@@ -1,8 +1,11 @@
 import { useState } from "react";
 import _ from "lodash";
+import { useQueryParams } from "./useQueryParams";
 
 export const useSearchBar = ({ name = "search" }) => {
-  const [search, setSearch] = useState("");
+  const params = useQueryParams();
+  const querySearch = params.get(name);
+  const [search, setSearch] = useState(querySearch || "");
   const onChange = (e) => setSearch(_.get(e, "target.value", ""));
 
   const sanitizeQuery = (query = "") => {
@@ -11,6 +14,7 @@ export const useSearchBar = ({ name = "search" }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if(!search) return;
     window.location = `/items?search=${sanitizeQuery(search)}`;
   };
 
