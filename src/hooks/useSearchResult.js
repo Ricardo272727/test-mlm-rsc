@@ -16,8 +16,8 @@ export const useSearchResult = ({ queryParameter = "search" }) => {
   const findResults = async (query) => {
     if (!query) return;
 
-    const { response, status } = await httpClient.get(`/api/items?q=${query}`);
-    if (status === 200) {
+    const { response, success } = await httpClient.get(`/api/items?q=${query}`);
+    if (success) {
       setResults(
         _.get(response, "items", []).map((item) => ({
           id: item.id,

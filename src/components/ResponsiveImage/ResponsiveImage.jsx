@@ -5,8 +5,9 @@ export const ResponsiveImage = ({
   mobileImage = "",
   desktopImage = "",
   className = "",
+  desktopBreakpoint = 1200,
 }) => {
-  const src = window.innerWidth <= 1200 ? mobileImage : desktopImage;
+  const src = window.innerWidth <= desktopBreakpoint ? mobileImage : desktopImage;
 
   return <img src={src} alt={alt} className={className} title={alt} />;
 };
@@ -16,4 +17,5 @@ ResponsiveImage.propTypes = {
   mobileImage: PropTypes.string.isRequired,
   desktopImage: PropTypes.string.isRequired,
   className: PropTypes.string,
+  desktopBreakpoint: PropTypes.number,
 };

@@ -4,7 +4,7 @@ import { useQueryParams } from "./useQueryParams";
 
 export const useSearchBar = ({ name = "search" }) => {
   const params = useQueryParams();
-  const querySearch = params.get(name);
+  const querySearch = params.get(decodeURIComponent(name));
   const [search, setSearch] = useState(querySearch || "");
   const onChange = (e) => setSearch(_.get(e, "target.value", ""));
 
@@ -14,7 +14,7 @@ export const useSearchBar = ({ name = "search" }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if(!search) return;
+    if (!search) return;
     window.location = `/items?search=${sanitizeQuery(search)}`;
   };
 
