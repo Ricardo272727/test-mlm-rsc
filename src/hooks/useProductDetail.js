@@ -22,7 +22,7 @@ export const useProductDetail = ({ id = "" }) => {
     const { response, success } = await httpClient.get(`/api/items/${id}`);
     if (!success) console.error(`Cannot get product details`);
     const item = _.get(response, "item", {})
-    console.log({item})
+
     setProduct({
         id: item.id,
         title: item.title,
